@@ -17,9 +17,12 @@ $simpleSort = new SimpleSort([
 	'created'=>'a.created'
 ], ['-created']);
 
+// example params
+$_REQUEST = ['sort'=>['role','-fio']];
+
 // execute with params to fill sort array
 $simpleSort->exec($_REQUEST);
 
 // get result string of sql query
-$simpleSort->getQuery();
+$simpleSort->getQuery(); // return "b.title ASC, a.lastname DESC, a.firstname DESC, a.patronymic DESC"
 ```
