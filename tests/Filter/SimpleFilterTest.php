@@ -6,6 +6,7 @@ use QueryBuildHelper\Filter\AbstractFilter;
 use QueryBuildHelper\Filter\SimpleFilter;
 use QueryBuildHelper\Filter\ArgumentFunctions as QBHFAF;
 use QueryBuildHelper\Filter\QueryFunctions as QBHFQF;
+// TODO: create DefaultValueFunctions class
 use QueryBuildHelper\Filter\DefaultValueFunctions as QBHFDVF;
 
 class SimpleFilterTest extends TestCase
