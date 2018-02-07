@@ -6,6 +6,7 @@ use QueryBuildHelper\Filter\AbstractFilter;
 use QueryBuildHelper\Filter\SimpleFilter;
 use QueryBuildHelper\Filter\ArgumentFunctions as QBHFAF;
 use QueryBuildHelper\Filter\QueryFunctions as QBHFQF;
+use QueryBuildHelper\Filter\DefaultValueFunctions as QBHFDVF;
 
 class SimpleFilterTest extends TestCase
 {
@@ -28,10 +29,12 @@ class SimpleFilterTest extends TestCase
 						]
 				]
 		], [
-				'f_del'=>'0',
-				'f_date'=>'between',
-				'df'=>'2017-01-01',
-				'dt'=>'2018-01-01'
+				'f_id'  =>QBHFDVF::EQ_REGEX('/\d+/'),
+				'f_name'=>QBHFDVF::EQ_REGEX('/[A-Za-zА-Яа-яЁё]+/'),
+				'f_del' =>QBHFDVF::EQ(['1','0'],'0'),
+				'f_date'=>QBHFDVF::EQ(['created','between'],'between'),
+				'df'    =>QBHFDVF::DATE('2017-01-01'),
+				'dt'    =>QBHFDVF::DATE('2018-01-01')
 		]);
 	}
 
