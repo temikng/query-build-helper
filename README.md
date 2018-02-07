@@ -64,6 +64,6 @@ $_REQUEST = ['f_name'=>'test','f_del'=>'1'];
 // execute with params to fill sort array
 $simpleFilter->exec($_REQUEST);
 
-$simpleFilter->getQuery(); // "UPPER(b.name) LIKE CONCAT('%',UPPER(?),'%') AND b.is_del = ? AND (CAST(created AS date) >= CAST(? AS date) AND CAST(created AS date) <= CAST(? AS date))"
-$simpleFilter->getArgs(); // ['test','TRUE']
+$simpleFilter->getQuery(); // return "UPPER(b.name) LIKE CONCAT('%',UPPER(?),'%') AND b.is_del = ? AND (CAST(created AS date) >= CAST(? AS date) AND CAST(created AS date) <= CAST(? AS date))"
+$simpleFilter->getArgs(); // return ['test','TRUE','2017-01-01','2018-01-01']
 ```
